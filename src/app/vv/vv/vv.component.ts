@@ -15,9 +15,11 @@ export class VvComponent implements OnInit {
   }
 
   getDocuments = (): void => {
+    let time=new Date().getTime();
+    console.log("vv before dl")
     this.vvService.getPDF(
     ).subscribe(() => {
-      console.log("vv dl done")
+      console.log("vv dl done:"+( new Date((new Date().getTime()-time)).getSeconds()))
     });
   }
 }
